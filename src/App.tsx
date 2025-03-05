@@ -1,12 +1,20 @@
 import './index.css';
 
 import Board from './components/board/Board'
+import { BrowserRouter, Route, Routes } from 'react-router';
+import Header from './components/header/Header';
 
 function App() {
   return (
-    <div className="grid place-content-center h-[100vh] bg-blue-950">
-      <Board />
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/main' element={
+          <div className="grid place-content-center h-[100vh]">
+            <Board />
+          </div>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
